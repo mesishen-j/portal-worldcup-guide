@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南宫体育 · 简明访问指南</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f2f4f6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 820px;
+            width: 100%;
+        }
+
+        /* hero 区：开场短句 */
+        .hero {
+            text-align: left;
+            padding: 2.5rem 2rem 1.8rem;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            border: 1px solid #e6e9ed;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero .kicker {
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: #7b8a9b;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #13212f;
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #3d4e5f;
+            background: #f0f3f6;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 24px;
+            margin-top: 0.6rem;
+        }
+
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            margin-bottom: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #10212e;
+            margin-bottom: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            margin-bottom: 0.8rem;
+            color: #253544;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 承接段落 – 卡片内强调文字 */
+        .intro-em {
+            font-size: 1.05rem;
+            background: #f6f8fa;
+            padding: 0.9rem 1.2rem;
+            border-radius: 12px;
+            border-left: 4px solid #8fa5b9;
+            margin-bottom: 1.2rem;
+        }
+
+        /* 特点列表 */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem 1rem;
+            margin: 0.6rem 0 0.2rem;
+        }
+
+        .feature-list li {
+            background: #f7f9fb;
+            padding: 0.9rem 1rem 0.9rem 1.8rem;
+            border-radius: 12px;
+            border: 1px solid #e9edf2;
+            position: relative;
+            font-size: 0.95rem;
+            color: #1b2b3a;
+        }
+
+        .feature-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0.6rem;
+            top: 0.9rem;
+            color: #59748f;
+            font-size: 1rem;
+        }
+
+        /* 场景 · 提示混合卡片 */
+        .mixed-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 0.8rem 0 0.2rem;
+        }
+
+        .mixed-item {
+            background: #fafbfc;
+            padding: 1rem 1.2rem;
+            border-radius: 14px;
+            border: 1px solid #e5eaf0;
+        }
+
+        .mixed-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            color: #1e3141;
+        }
+
+        .mixed-item p {
+            font-size: 0.93rem;
+            color: #2d4051;
+        }
+
+        /* FAQ 摘要 – 紧凑样式 */
+        .faq-summary {
+            background: #f4f7fa;
+            padding: 0.8rem 1.2rem;
+            border-radius: 12px;
+            border: 1px solid #dee4ea;
+        }
+
+        .faq-summary details {
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-summary details summary {
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            color: #192b39;
+        }
+
+        .faq-summary details p {
+            margin: 0.25rem 0 0.5rem 0.8rem;
+            font-size: 0.93rem;
+            color: #304352;
+        }
+
+        .faq-summary details:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 温和结尾 */
+        .gentle-footer {
+            text-align: center;
+            padding: 1.2rem 2rem 1.6rem;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            font-size: 0.95rem;
+            color: #3a4d5e;
+        }
+
+        .gentle-footer a {
+            color: #1a3a53;
+            text-decoration: none;
+            border-bottom: 1px solid #bcc9d6;
+            font-weight: 400;
+            transition: border-color 0.15s;
+        }
+
+        .gentle-footer a:hover {
+            border-bottom-color: #1a3a53;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+            .mixed-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero：开场短句 -->
+    <div class="hero">
+        <div class="kicker">简明指南 · 访问提醒</div>
+        <h1>从这一页开始<br>熟悉南宫体育的访问方式</h1>
+        <div class="sub">无多余步骤 · 直接认识核心界面</div>
+    </div>
+
+    <!-- 承接段落 -->
+    <div class="card">
+        <div class="intro-em">
+            无论是初次了解还是日常使用，保持对访问路径的基本认知，总比临时搜索更高效。
+        </div>
+        <p><a href="https://cns-ssl-ngsport.com" style="color:#1a3a53;text-decoration:underline;text-underline-offset:3px;">南宫体育</a> 提供了一组结构清晰的页面，涵盖赛事浏览、数据查询与个人管理。在访问前，了解以下三组特征，能让你更快定位到所需内容。页面之间通过统一导航衔接，无须记忆复杂地址。</p>
+    </div>
+
+    <!-- 特点列表卡片 -->
+    <div class="card">
+        <h2>▍界面特征</h2>
+        <ul class="feature-list">
+            <li>首页采用信息分区，左侧为赛事列表，右侧为筛选面板</li>
+            <li>每项内容均配有独立详情页，URL 保持简短可读</li>
+            <li>搜索入口固定在顶部栏，支持关键词与编号双重检索</li>
+            <li>账户相关操作集中在右上角下拉菜单，减少跳转次数</li>
+        </ul>
+    </div>
+
+    <!-- 场景 + 提示混合卡片 -->
+    <div class="card">
+        <h2>▍典型场景与访问提醒</h2>
+        <div class="mixed-grid">
+            <div class="mixed-item">
+                <h3>日常浏览</h3>
+                <p>直接进入首页即可看到更新列表，按时间倒序排列。建议先确认页面加载状态，部分资源采用延迟加载。</p>
+            </div>
+            <div class="mixed-item">
+                <h3>访问稳定性</h3>
+                <p>使用主流浏览器并保持系统时间准确，可减少证书提示。若出现非安全警告，请检查网络环境。</p>
+            </div>
+            <div class="mixed-item">
+                <h3>信息检索</h3>
+                <p>利用顶部搜索时，可尝试组合关键词：例如“赛事编号+日期”。搜索结果页包含快速预览功能。</p>
+            </div>
+            <div class="mixed-item">
+                <h3>账户相关</h3>
+                <p>登录入口位于页面右上角，首次使用建议先阅读帮助文档。密码重置流程通过绑定邮箱完成。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要卡片 -->
+    <div class="card">
+        <h2>▍常见疑问摘要</h2>
+        <div class="faq-summary">
+            <details>
+                <summary>页面样式异常怎么办？</summary>
+                <p>先刷新页面，若仍异常，清除浏览器缓存后重试。部分网络代理可能干扰资源加载。</p>
+            </details>
+            <details>
+                <summary>是否必须注册才能浏览？</summary>
+                <p>公开内容无需登录即可查看。涉及个人收藏或数据导出等功能需要注册账户。</p>
+            </details>
+            <details>
+                <summary>移动端访问体验如何？</summary>
+                <p>页面采用自适应布局，在手机浏览器上会自动调整卡片宽度与字体大小，功能完整。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 温和结尾，自然嵌入链接 -->
+    <div class="gentle-footer">
+        若你希望直接前往主页探索更多内容，<a href="https://cns-ssl-ngsport.com">南宫体育</a> 的界面已为你准备好。<br>
+        初次访问建议从导航栏的「指南」部分开始，逐步熟悉各模块用途。
+    </div>
+
+</div>
+</body>
+</html>
